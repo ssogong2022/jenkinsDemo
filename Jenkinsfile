@@ -1,11 +1,24 @@
-import java.text.SimpleDateFormat
-
-node {
-  stage('test') {
-    def dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
-    def date = new Date()
-    def TODAY = dateFormat.format(date)
-    
-    sh "echo ${TODAY}"
-  }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                build 'SeleniumMaven'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+  post {
+        echo 'pipeline job done'
+        }
+    }
 }
