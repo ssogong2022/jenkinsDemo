@@ -19,6 +19,8 @@ pipeline {
         }
     }
   post {
-        echo 'pipeline job done'
+        always {
+            echo 'SeleniumMaven'
+        }
     }
 }
