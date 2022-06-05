@@ -7,6 +7,6 @@ node {
     def date = new Date()
     def TODAY = dateFormat.format(date)
 
-    sh "echo ${TODAY}"
+    bat "echo ${TODAY}"
   }
 }
