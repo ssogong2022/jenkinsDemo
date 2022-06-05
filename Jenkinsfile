@@ -18,6 +18,6 @@ pipeline {
         }
     }
   post {
-        echo 'pipeline job done'
+        echo 'pipeline job done!!!'
     }
 }
