@@ -10,13 +10,9 @@ pipeline {
                 def dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
                 def date = new Date()
                 
-                today = dateFormat.format(date) 
+                def today = dateFormat.format(date) 
+                bat "echo ${today}"
             }
-        }
-    }
-  post {
-        always {
-            echo today
         }
     }
 }
