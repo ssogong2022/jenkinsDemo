@@ -1,25 +1,12 @@
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                build 'SeleniumMaven'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-  post {
-        always {
-            echo 'pipeline job done!!!'
-        }
-    }
+import java.text.SimpleDateFormat
+
+node {
+  stage('test') {
+    def dateFormat = new SimpleDateFormat("yyMMddHHmm")
+    def date = new Date()
+    def TODAY = dateFormat.format(date)
+    
+    sh "echo ${TODAY}"
+  }
 }
+출처: https://www.oofbird.me/75 [OOFBIRD.ME:티스토리]
