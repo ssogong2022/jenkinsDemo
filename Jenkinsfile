@@ -18,6 +18,8 @@ pipeline {
         }
     }
   post {
-        echo 'pipeline job done!!!'
+        always {
+            junit '**/target/*.xml'
+        }
     }
 }
