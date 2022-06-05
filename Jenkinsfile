@@ -19,6 +19,5 @@ pipeline {
     }
   post {
         echo 'pipeline job done'
-        }
     }
 }
