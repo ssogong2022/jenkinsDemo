@@ -19,7 +19,7 @@ pipeline {
     }
   post {
         always {
-            junit '**/target/*.xml'
+            echo '하놔'
         }
     }
 }
